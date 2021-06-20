@@ -1,0 +1,57 @@
+{
+  "name": "website-template",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "build:dev": "webpack --node-env=dev --config=webpack.config.dev.js",
+    "build:prod": "webpack --node-env=prod --config=webpack.config.prod.js",
+    "watch": "webpack --watch",
+    "serve": "webpack serve --config=webpack.config.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntiHero/WebSiteTemplate3.git"
+  },
+  "keywords": [],
+  "author": "Aleksandr Schemelev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntiHero/WebSiteTemplate3/issues"
+  },
+  "homepage": "https://github.com/AntiHero/WebSiteTemplate3#readme",
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "*",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "postcss-loader": "^6.1.0",
+    "prettier": "^2.3.1",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:write"
+    ]
+  }
+}
