@@ -22,7 +22,7 @@ async function startServer() {
       },
     });
   });
-  
+
   app.get("/about", (request, reply) => {
     reply.render("/pages/about.pug");
   });
@@ -38,19 +38,9 @@ async function startServer() {
   app.listen(3001, (err, address) => {
     if (err) {
       fastify.log.error(err);
-      // process.exit(1);
     }
     fastify.log.info(`server listening on ${address}`);
   });
-
-  // process.on('SIGHUP', () => {
-
-  // });
-
-  // process.on('SIGINT', () => {
-  //   // this is only called on ctrl+c, not restart
-  //   process.kill(process.pid, 'SIGINT');
-  // });
 }
 
 startServer();
