@@ -1,4 +1,5 @@
 
+block variables
 doctype html
 html(lang="en")
   head
@@ -31,8 +32,8 @@ html(lang="en")
       include ./styles/main.css
  
   body
+    include ./partials/preloader.pug
     include ./partials/navigation.pug
-    block variables
 
     .content#content(data-template=template)
     
