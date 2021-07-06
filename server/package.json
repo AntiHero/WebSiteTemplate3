@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "nodemon --watch src src/index.js -e js,pug & browser-sync start --proxy localhost:3001 -f 'src/views/**/*' --no-inject-changes --logLevel debug --no-ui",
+    "dev": "nodemon --watch src src/index.js -e js,pug & browser-sync start --proxy localhost:3001 --files 'src/views/**/*' --port 3000 --no-inject-changes --logLevel debug --no-ui",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

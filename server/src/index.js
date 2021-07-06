@@ -1,38 +1,38 @@
-const { join } = require("path");
-const fastify = require("fastify")({
+const { join } = require('path');
+const fastify = require('fastify')({
   logger: true,
 });
-const fastifyPug = require("fastify-pug");
+const fastifyPug = require('fastify-pug');
 
 async function startServer() {
   const app = fastify;
 
   app.register(fastifyPug, {
-    views: join(__dirname, "views"),
+    views: join(__dirname, 'views'),
     filename: (view) => `src/views/${view}`,
   });
 
-  app.get("/", (request, reply) => {
-    reply.render("/pages/home.pug", {
+  app.get('/', (request, reply) => {
+    reply.render('pages/home.pug', {
       meta: {
         data: {
-          title: "Evergreen Forest",
-          description: "let the forest engulf you",
+          title: 'Evergreen Forest',
+          description: 'let the forest engulf you',
         },
       },
     });
   });
 
-  app.get("/about", (request, reply) => {
-    reply.render("/pages/about.pug");
+  app.get('/about', (request, reply) => {
+    reply.render('pages/about.pug');
   });
 
-  app.get("/trees", (request, reply) => {
-    reply.render("/pages/trees.pug");
+  app.get('/trees', (request, reply) => {
+    reply.render('pages/trees.pug');
   });
 
-  app.get("/detail/:", (request, reply) => {
-    reply.render("/pages/detail.pug");
+  app.get('/detail/:', (request, reply) => {
+    reply.render('pages/detail.pug');
   });
 
   app.listen(3001, (err, address) => {
